@@ -1249,6 +1249,17 @@ declare namespace Eris {
     label: string;
     value: string;
   }
+  interface TextInput {
+    type: Constants["ComponentTypes"]["TEXT_INPUT"];
+    custom_id: string;
+    style: Constants["TextInputStyles"];
+    label: string;
+    min_length?: number;
+    max_length?: number;
+    required?: boolean;
+    value?: string;
+    placeholder?: string;
+  }
   interface GetMessageReactionOptions {
     after?: string;
     /** @deprecated */
@@ -1653,6 +1664,10 @@ declare namespace Eris {
       DANGER:    4;
       LINK:      5;
     };
+    TextInputStyles: {
+      SHORT: 1;
+      PARAGRAPH: 2;
+    }
     ChannelTypes: {
       GUILD_TEXT:           0;
       DM:                   1;
@@ -1673,6 +1688,7 @@ declare namespace Eris {
       ACTION_ROW:  1;
       BUTTON:      2;
       SELECT_MENU: 3;
+      TEXT_INPUT:  4;
     };
     ConnectionVisibilityTypes: {
       NONE:     0;
